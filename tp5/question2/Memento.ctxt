@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Memento
+comment0.text=\r\n\ La\ classe\ Memento\ est\ responsable\ du\ stockage\ de\ l'\u00E9tat\ de\ la\ \r\n\ 'liste\ de\ String'\ \u00E0\ chaque\ action\ \r\n\ ('retirer'\ ,\ 'croissant'\ ,\ 'decroisssant').\r\n\r\n\ @author\ Agatha\ Khairallah\r\n\ @version\ 1.0\r\n
+comment1.params=mementoListe
+comment1.target=Memento(java.util.List)
+comment2.params=
+comment2.target=java.util.List\ getMementoListe()
+numComments=3

@@ -23,7 +23,7 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
 
     private CheckboxGroup mode = new CheckboxGroup();
     private Checkbox ordreCroissant = new Checkbox("croissant", mode, false);
-    private Checkbox ordreDecroissant = new Checkbox("dÃ©croissant", mode, false);
+    private Checkbox ordreDecroissant = new Checkbox("décroissant", mode, false);
 
     private JButton boutonOccurrences = new JButton("occurrence");
 
@@ -54,7 +54,7 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
             afficheur.setText(liste.getClass().getName() + " et "+ occurrences.getClass().getName());
             texte.setText(liste.toString());
         }else{
-            texte.setText("la classe Chapitre2CoreJava semble incomplÃ¨te");
+            texte.setText("la classe Chapitre2CoreJava semble incomplète");
         }
 
         setLayout(new BorderLayout());
@@ -62,8 +62,19 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
         add(cmd, "North");
         add(texte, "Center");
 
+        // Listeners pour les boutons
         boutonRechercher.addActionListener(this);
-        // Ã  complÃ©ter;
+        boutonRetirer.addActionListener(this);
+        boutonOccurrences.addActionListener(this);
+
+        // Listeners pour le TextField
+        // La touche Entrée du clavier a le même effet qu'une 
+        // action effectuée sur ce bouton
+        saisie.addActionListener(this);
+
+        // Listeners pour les Checkbox
+        ordreCroissant.addItemListener(this);
+        ordreDecroissant.addItemListener(this);
 
     }
 
@@ -74,11 +85,11 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
             if (ae.getSource() == boutonRechercher || ae.getSource() == saisie) {
                 res = liste.contains(saisie.getText());
                 Integer occur = occurrences.get(saisie.getText());
-                afficheur.setText("rÃ©sultat de la recherche de : "+ saisie.getText() + " -->  " + res);
+                afficheur.setText("résultat de la recherche de : "+ saisie.getText() + " -->  " + res);
             } else if (ae.getSource() == boutonRetirer) {
                 res = retirerDeLaListeTousLesElementsCommencantPar(saisie
                     .getText());
-                afficheur.setText("rÃ©sultat du retrait de tous les Ã©lÃ©ments commenÃ§ant par -->  "+ saisie.getText() + " : " + res);
+                afficheur.setText("résultat du retrait de tous les éléments commençant par -->  "+ saisie.getText() + " : " + res);
             } else if (ae.getSource() == boutonOccurrences) {
                 Integer occur = occurrences.get(saisie.getText());
                 if (occur != null)
@@ -94,19 +105,40 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
     }
 
     public void itemStateChanged(ItemEvent ie) {
-        if (ie.getSource() == ordreCroissant)
-            ;// Ã  complÃ©ter
-        else if (ie.getSource() == ordreDecroissant)
-            ;// Ã  complÃ©ter
+        if (ie.getSource() == ordreCroissant){
+            Collections.sort(liste);
+        }
+        else if (ie.getSource() == ordreDecroissant){
+            Collections.sort(liste, new trieDecroissant());
+        }
 
         texte.setText(liste.toString());
     }
 
+    private class trieDecroissant implements Comparator<String>{
+        public int compare(String str1, String str2){ 
+          return str2.compareTo(str1);
+        }
+    }
+
     private boolean retirerDeLaListeTousLesElementsCommencantPar(String prefixe) {
         boolean resultat = false;
-        // Ã  complÃ©ter
-        // Ã  complÃ©ter
-        // Ã  complÃ©ter
+        String elt;
+        // Utilisation d'un Iterator
+        Iterator<String> it = liste.iterator();
+        while(it.hasNext()){
+            elt = it.next();
+            if(elt != null && elt.startsWith(prefixe)){
+                /**
+                 * Le retrait d'un élément qui a déjà été présent
+                 * dans la table retourne un nombre d'occurrences 
+                 * égal à zéro
+                 */
+                occurrences.replace(elt, occurrences.get(elt) - 1);
+                resultat = true;
+                it.remove();
+            }
+        }
         return resultat;
     }
 

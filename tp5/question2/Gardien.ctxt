@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Gardien
+comment0.text=\r\n\ La\ classe\ Gardien\ est\ responsable\ du\ stockage\ des\ mementos\ \u00E0\ \r\n\ chaque\ action\ ('retirer'\ ,\ 'croissant'\ ,\ 'decroisssant')\ dans\r\n\ une\ Pile\ (java.util.Stack).\r\n\r\n\ @author\ Agatha\ Khairallah\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=Gardien()
+comment2.params=
+comment2.target=java.util.Stack\ getMementos()
+comment3.params=
+comment3.target=Memento\ getMemento()
+comment4.params=memento
+comment4.target=Memento\ addMemento(Memento)
+numComments=5

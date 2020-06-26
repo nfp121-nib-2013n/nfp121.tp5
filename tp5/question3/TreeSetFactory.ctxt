@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=TreeSetFactory
+comment0.text=\r\n\ Les\ \u00E9l\u00E9ments\ doivent\ \u00EAtre\ comparables,\ alors\ tout\ \u00E9l\u00E9ment\r\n\ de\ type\ 'T'\ doit\ forcement\ h\u00E9riter\ de\ la\ classe\ Comparable\r\n
+comment1.params=
+comment1.target=java.util.TreeSet\ create()
+numComments=2

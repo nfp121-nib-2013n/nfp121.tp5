@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=JPanelListe2
+comment0.text=\r\n\ Pour\ la\ fonctionnalit\u00E9\ annuler,\ j'ai\ utilis\u00E9\ le\ patron\ Memento.\r\n\ En\ effet,\ \u00E0\ chaque\ action\ ('retirer'\ ,\ 'croissant'\ ,\ \r\n\ 'decroisssant')\ la\ liste\ est\ sauvegard\u00E9e\ dans\ un\ objet\ Memento\r\n\ dont\ celui-ci\ sera\ stock\u00E9\ dans\ la\ pile\ du\ gardien.\r\n\ Suite\ \u00E0\ l'action\ 'annuler',\ le\ dernier\ Memento\ sauvegard\u00E9\ sera\ \r\n\ retirer\ de\ la\ pile\ en\ restituant\ l'\u00E9tat\ de\ la\ liste\ appropri\u00E9e\r\n\ et\ puis\ la\ table\ des\ occurrences\ est\ mise\ \u00E0\ jour.\r\n
 comment1.params=liste\ occurrences
 comment1.target=JPanelListe2(java.util.List,\ java.util.Map)
 comment2.params=ae

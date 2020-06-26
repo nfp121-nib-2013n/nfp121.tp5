@@ -1,8 +1,18 @@
 #BlueJ class context
-comment0.params=
-comment0.target=int\ size()
+comment0.target=Ensemble
 comment1.params=
-comment1.target=java.util.Iterator\ iterator()
-comment2.params=t
-comment2.target=boolean\ add(java.lang.Object)
-numComments=3
+comment1.target=int\ size()
+comment1.text=\r\n\ Attention\:\r\n\ Une\ classe\ X\ qui\ h\u00E9rite\ de\ 'Ensemble<T>'\ peut\ mettre\ sa\ variable\ 'table'\r\n\ \u00E0\ null\ (comme\ \u00E9tant\ une\ variable\ 'protected').\r\n\ Lorsque\ X\ tant\ \u00E0\ utiliser\ la\ m\u00E9thode\ 'size'\ par\ exemple,\ celle-ci\ g\u00E9n\u00E9ra\r\n\ une\ exception\ de\ type\ 'NullPointerException'.\r\n
+comment2.params=
+comment2.target=java.util.Iterator\ iterator()
+comment3.params=t
+comment3.target=boolean\ add(java.lang.Object)
+comment4.params=e
+comment4.target=Ensemble\ union(Ensemble)
+comment5.params=e
+comment5.target=Ensemble\ inter(Ensemble)
+comment6.params=e
+comment6.target=Ensemble\ diff(Ensemble)
+comment7.params=e
+comment7.target=Ensemble\ diffSym(Ensemble)
+numComments=8
