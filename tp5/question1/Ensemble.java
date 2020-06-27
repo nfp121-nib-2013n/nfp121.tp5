@@ -71,6 +71,10 @@ public class Ensemble<T> extends AbstractSet<T> {
     }
 
     public Ensemble<T> diffSym(Ensemble<? extends T> e) {
+        Ensemble union = this.union(e);
+        if (union == null){
+            return null;
+        }
         Ensemble resultat = this.union(e).diff(this.inter(e));
         return resultat;
     }

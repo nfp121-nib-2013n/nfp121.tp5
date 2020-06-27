@@ -71,7 +71,7 @@ public class JPanelListe2 extends JPanel implements ActionListener, ItemListener
             afficheur.setText(liste.getClass().getName() + " et "+ occurrences.getClass().getName());
             texte.setText(liste.toString());
         }else{
-            texte.setText("la classe Chapitre2CoreJava semble incomplÃ¨te");
+            texte.setText("la classe Chapitre2CoreJava semble incomplète");
         }
 
         setLayout(new BorderLayout());
@@ -134,6 +134,9 @@ public class JPanelListe2 extends JPanel implements ActionListener, ItemListener
     }
 
     public void itemStateChanged(ItemEvent ie) {
+        if (liste == null){
+            return;
+        }
 
         /**
          * Afin de stocker la 'liste de String', il est préférable

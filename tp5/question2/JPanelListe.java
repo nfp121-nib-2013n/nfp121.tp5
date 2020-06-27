@@ -105,6 +105,9 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
     }
 
     public void itemStateChanged(ItemEvent ie) {
+        if (liste == null){
+            return;
+        }
         if (ie.getSource() == ordreCroissant){
             Collections.sort(liste);
         }
@@ -117,7 +120,7 @@ public class JPanelListe extends JPanel implements ActionListener, ItemListener 
 
     private class trieDecroissant implements Comparator<String>{
         public int compare(String str1, String str2){ 
-          return str2.compareTo(str1);
+            return str2.compareTo(str1);
         }
     }
 
